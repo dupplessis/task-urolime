@@ -1,18 +1,12 @@
-variable "availability_zones_count1" {
+variable "availability_zones_count" {
   description = "The number of AZs."
   type        = number
   default     = 2
 }
 
-variable "availability_zones_count2" {
-  description = "The number of AZs."
-  type        = number
-  default     = 2
-}
 variable "project" {
-  description = "Name to be used on all the resources as identifier. e.g. Project name, Application name"
-  # description = "Name of the project deployment."
-  type = string
+  description = "Name to be used on all the resources as an identifier. e.g. Project name, Application name"
+  type        = string
 }
 
 variable "vpc_cidr" {
@@ -30,7 +24,8 @@ variable "subnet_cidr_bits" {
 variable "tags" {
   description = "A map of tags to add to all resources"
   type        = map(string)
-  default = {
-    "Project"     = "TerraformEKSWorkshop"
+  default     = {
+    "Project" = "TerraformEKSWorkshop"
   }
 }
+

@@ -11,7 +11,7 @@ resource "aws_vpc" "EKS_POC_PROJECT_vpc" {
 resource "aws_subnet" "AZ1_private" {
   vpc_id            = aws_vpc.EKS_POC_PROJECT_vpc.id
   cidr_block        = "10.0.1.0/24"
-  availability_zone = "us-east-2a"
+  availability_zone = "us-west-2a"
 
   tags = {
     Name = "${var.project}-private-sg"
@@ -24,7 +24,7 @@ resource "aws_subnet" "AZ1_private" {
 resource "aws_subnet" "AZ2_private" {
   vpc_id            = aws_vpc.EKS_POC_PROJECT_vpc.id
   cidr_block        = "10.0.3.0/24"
-  availability_zone = "us-east-2b"
+  availability_zone = "us-west-2b"
 
   tags = {
     Name = "${var.project}-private-sg"
